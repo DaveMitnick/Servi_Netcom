@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyecto en Construcción</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color:white;
+    position:relative;
+    overflow:hidden;
+}
+
+/* Fondo animado mejorado */
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08), transparent 40%);
+    animation: moveBackground 18s infinite alternate ease-in-out;
+    z-index:0;
+}
+
+@keyframes moveBackground{
+    from{transform:translate(0,0);}
+    to{transform:translate(-4%,-4%);}
+}
+
+/* Contenedor principal */
+.container{
+    position:relative;
+    z-index:1;
+    text-align:center;
+    padding:60px 50px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    box-shadow:0 20px 45px rgba(0,0,0,0.4);
+    max-width:800px;
+    width:90%;
+    animation:fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(25px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* Título */
+h1{
+    font-size:clamp(2rem,6vw,4.5rem);
+    font-weight:800;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    background:linear-gradient(90deg,#00c6ff,#0072ff);
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+}
+
+/* Texto */
+p{
+    margin-top:25px;
+    font-size:1.1rem;
+    font-weight:300;
+    opacity:0.9;
+}
+
+/* Barra de progreso */
+.progress{
+    margin-top:40px;
+    height:8px;
+    width:100%;
+    background:rgba(255,255,255,0.2);
+    border-radius:50px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    width:65%;
+    background:linear-gradient(90deg,#00c6ff,#0072ff);
+    border-radius:50px;
+    animation:loading 2s ease-in-out infinite alternate;
+}
+
+@keyframes loading{
+    from{width:55%;}
+    to{width:75%;}
+}
+
+/* Botón volver */
+.btn-volver{
+    position:absolute;
+    top:25px;
+    left:25px;
+    padding:10px 22px;
+    font-size:14px;
+    font-weight:600;
+    text-decoration:none;
+    color:#fff;
+    background:linear-gradient(135deg,#0072ff,#00c6ff);
+    border-radius:30px;
+    transition:all .3s ease;
+    box-shadow:0 6px 18px rgba(0,114,255,.3);
+    z-index:2;
+}
+
+.btn-volver:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,114,255,.4);
+}
+
+/* Footer */
+footer{
+    margin-top:30px;
+    font-size:.85rem;
+    opacity:.7;
+    line-height:1.5;
+}
+
+/* Responsive */
+@media(max-width:600px){
+    .container{
+        padding:40px 25px;
+    }
+
+    .btn-volver{
+        top:15px;
+        left:15px;
+        font-size:13px;
+        padding:8px 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="btn-volver">← Volver al inicio</a>
+
+<div class="container">
+    <h1>PROYECTO EN CONSTRUCCIÓN</h1>
+    <p>Estamos trabajando para ofrecerte una mejor experiencia.  
+    Muy pronto estará disponible.</p>
+
+    <div class="progress">
+        <div class="progress-bar"></div>
+    </div>
+
+    <footer>
+        © 2026 | Todos los derechos reservados<br>
+        Ing. David A. Castro Mejía
+    </footer>
+</div>
+
+</body>
+</html>
